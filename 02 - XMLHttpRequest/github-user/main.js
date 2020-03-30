@@ -1,12 +1,11 @@
-// Your code goes here
 let input = document.querySelector('.input');
 let submit = document.querySelector('.submit_btn');
 let cardWrapper = document.querySelector('.card');
-let url = 'https://api.github.com/users/';
 let username = '';
 let userDetail = {};
 
 function handleInput(event) {
+    let url = 'https://api.github.com/users/';
     event.preventDefault();
 
     if(input.value.trim()) {
@@ -26,15 +25,22 @@ function fetchInfo(username,url) {
         if(xhr.status == 200) {
             userDetail = JSON.parse(xhr.response);
             createUI(userDetail);
+        } else {
+            cardWrapper.style.visibility = 'visible';
+            cardWrapper.classList.add('error');
+            cardWrapper.innerHTML = `<p style="color: #fff"> User was not found! :( </p>`
         }
     }
 
-    // xhr.onerror()
     xhr.send();
 }
 
 function createUI(user) {
    
+    cardWrapper.style.visibility = 'visible';
+    if(cardWrapper.classList.contains('error')) {
+        cardWrapper.classList.remove('error');
+    }
     let code = `<div class="user_icon">
                     <img src="${user.avatar_url}" alt="">
                 </div>
@@ -48,4 +54,5 @@ function createUI(user) {
     cardWrapper.innerHTML = code;
 
 }
+
 submit.addEventListener('click',handleInput);

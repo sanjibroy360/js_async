@@ -54,7 +54,7 @@ body {
     background: linear-gradient(180deg, #45aaf2, #4b7bec);
     background-repeat: no-repeat;
     line-height: 1.8;
-    height: 100vh;
+    height: 67vh;
     font-family: 'Ubuntu Mono', monospace;
 }
 
@@ -67,7 +67,6 @@ body {
     margin: 0 auto;
     position: relative;
     margin-top: 12rem;
-    margin-bottom: 1.5rem;
 }
 
 .search {
@@ -126,7 +125,16 @@ img {
     width: 97%;
     margin: 0 auto;
     padding: 1rem;
-    box-shadow: 1px 1px 5px #333;
+    background-color: rgb(75,123,236);
+    visibility: hidden;
+}
+
+.error {
+    border: none;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    display: block;
 }
 
 ::placeholder{
