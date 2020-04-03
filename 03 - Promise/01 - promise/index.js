@@ -1,7 +1,7 @@
 // Challenge 1
 
 function sayHello() {
-
+ setTimeout( () => console.log('Hello'), 1000);
 }
 
 // Uncomment the line below when ready
@@ -11,7 +11,9 @@ function sayHello() {
 // Challenge 2
 var promise = new Promise(function (resolve, reject) {
   // ADD CODE HERE
-});
+  setTimeout( () => resolve('Resolved'),1000)
+  
+}).then(resMsg => console.log(resMsg));
 
 // Should print out "Resolved!"
 // ADD CODE HERE
@@ -21,7 +23,8 @@ var promise = new Promise(function (resolve, reject) {
 
 promise = new Promise(function(resolve, reject) {
   // ADD CODE HERE
-})
+  reject('Rejected!');
+}).catch(errorMsg => console.log(errorMsg));
 
 // Should print out "Reject!"
 // ADD CODE HERE
@@ -31,28 +34,46 @@ promise = new Promise(function(resolve, reject) {
 
 promise = new Promise(function (resolve, reject) {
   // ADD CODE HERE
+  resolve();
 });
 
 // Uncomment the lines below when ready
-// promise.then(() => console.log('Promise has been resolved!));
-// console.log("I'm not the promise!");
+promise.then(() => console.log('Promise has been resolved!'));
+console.log("I'm not the promise!");
 
 
 // Challenge 5
-function delay(){
 
+// var sayHello = () => 
+function delay(){
+ 
+ let promise = new Promise(function(resolve, reject) {
+   setTimeout(() => resolve(function sayHello() {
+    console.log('Hello');
+   }), 1000);
+ });
+ return promise;
 }
 
 // Uncomment the code below to test
 // This code should log "Hello" after 1000ms
-// delay().then(sayHello);
+delay().then(sayHello);  
+
+
 
 
 // Challenge 6
 //
 // ADD CODE BELOW
-// var secondPromise =
-// var firstPromise =
+var secondPromise = new Promise( function(resolve, reject) {
+  resolve('Solved');
+});
+
+var firstPromise = new Promise( function(resolve, reject) {
+  resolve(secondPromise);
+} );
+
+firstPromise.then(promise2 => promise2).then(res => res)
 
 
 // Challenge 7
@@ -75,4 +96,12 @@ const fakeAPICall = (i) => {
 
 function getAllData() {
   // CODE GOES HERE
+  let arr = [];
+  for(let i = 0; i < fakePeople.length; i++) {
+    arr.push(fakeAPICall(i));
+    
+  }
+  Promise.all(arr).then(res => console.log(res));
 }
+
+getAllData();

@@ -1,0 +1,296 @@
+/* CSS RESET */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* My CSS */
+
+body {
+	line-height: 1.5;
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header_flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 30px;
+}
+
+.title_wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.header {
+	padding: 5px;
+	background-color: #fff;
+	box-shadow: 1px 1px 5px #ccc;
+}
+
+.heading {
+	font-size: 32px;
+	margin-left: 10px;
+	font-weight: 550;
+}
+
+.desc {
+	font-size: 22px;
+}
+
+.highlight {
+	color: rgb(13, 149, 13);
+}
+
+.search_btn {
+	
+	background-color: #fff;
+	padding: 0.2rem 1.2rem;
+	padding-bottom: 0.8rem;
+	outline: 0;
+	border: none;
+	cursor: pointer;
+
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	z-index: 55;
+}
+.input {
+	padding: 0.8rem;
+	width: 400px;
+	font-size: 18px;
+	outline: 0;
+	border: none;
+	border-radius: 8px;
+	box-shadow: inset 1px 1px 5px #ddd,
+				inset -1px 1px 5px #777;
+}
+
+.form {
+	position: relative;
+	z-index: 10;
+}
+
+/* User info */
+
+.user_info {
+	margin-top: 25px;
+}
+
+.profile_pic {
+	width: 220px;
+	height: 260px;
+	border-radius: 10px;
+}
+
+.personal_details {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.follow {
+	display: flex;
+	width: 300px;
+	justify-content: space-between;
+	margin-top: 15px;
+
+}
+
+.no {
+	text-align: center;
+}
+
+.info {
+	margin-left: 20px;
+}
+
+.name {
+	font-size: 38px;
+	font-weight: bold;
+}
+
+.username {
+	font-size: 18px;
+	letter-spacing: 0.8px;
+}
+
+.bio {
+	font-size: 24px;
+}
+
+.working, .location {
+	font-size: 19px;
+}
+
+.link {
+	font-size: 18px;
+}
+
+.follow_no {
+	font-size: 32px;
+	text-align: center;
+}
+
+.follow_label {
+	font-size: 18px;
+	text-align: center;
+}
+
+/* Repo Info */
+
+.acc_details {
+	padding-top: 15px;
+}
+
+.repo_details {
+	margin-bottom: 50px; 
+}
+
+.card {
+	border-bottom: 1px solid #ddd;
+}
+
+.repo_details .icon_text, .history {
+	color: #777;
+}
+
+.acc_heading {
+	font-size: 32px;
+	margin-bottom: 20px;
+	visibility: hidden;
+}
+
+.repo_name {
+	font-size: 28px;
+}
+
+.fork {
+	color: #000;
+	font-size: 14px;
+}
+
+.repo_desc {
+	font-size: 18px;
+}
+
+.repo_follower_wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.repo_details {
+	flex-basis: 50%;
+}
+
+.repo_info {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	/* background-color: yellowgreen; */
+	margin-top: 70px;
+	padding-bottom: 15px;
+}
+
+.repo_star_fork {
+	display: flex;
+	align-items: center;
+}
+
+.repo_star_fork li {
+	margin-left: 10px;
+}
+
+.repo_star_fork i {
+	font-size: 15px;
+}
+
+.icon_text {
+	margin-left: 2px;
+}
+
+
+/* Follower's Image */
+
+.five_followers {
+	flex-basis: 48%;
+	
+}
+.followers_card {
+	display: flex;
+	align-items: flex-start;
+	margin-top: 15px;
+	border-bottom: 1px solid #ddd;
+	
+}
+
+.follower_image {
+	width: 100px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
+
+.follower_name {
+	font-size: 20px;
+}

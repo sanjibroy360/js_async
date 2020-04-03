@@ -4,11 +4,94 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
+    
+    <script defer src="./assets/scripts/main.js"></script>
+    <link rel="stylesheet" href="./assets/stylesheets/style.css">
+
+    <!-- Font awesome -->
+
+    <script src="https://kit.fontawesome.com/56c102e6b2.js" crossorigin="anonymous"></script>
+
     <title>Github User Search</title>
+    
   </head>
   <body>
-    // Your code goes here
-    <script src="./main.js"></script>
+    <main>
+      <header class="header">
+       <div class="container header_flex">
+
+          <div class="head_text">
+            
+            <div class="title_wrapper">
+              <!-- Logo -->
+              <div>
+                <img src="./assets/media/git_logo.png" alt="Logo" class="logo">
+              </div>
+              <!-- Header Text -->
+              <div class="title">
+                  <h3 class="heading">Github User Search</h3>
+              </div>
+            </div>
+
+            <p class="desc">Browse users and their profiles via <span class="highlight">the Github API</span></p>
+
+          </div>
+          
+          <div class="searchbox">
+          
+            <form class="form">
+              <button class="search_btn">
+                <i class="fa fa-search" style="font-size: 24px;"></i>
+              </button>
+
+              <input type="text" placeholder="Search for a user, e.g. simonsmith" class="input">
+            </form>
+            
+          </div>
+
+       </div>
+
+      </header>
+
+      <!-- User Info -->
+      
+      <section class="user_info">
+        <div class="container">
+
+          <div class="personal_details"></div>
+
+        </div>
+
+      </section>
+
+      <!--Git Account Details -->
+      <section class="acc_details">
+        <div class="container">
+          <div class="repo_follower_wrapper">
+
+            <div class="repo_details">
+              <h2 class="acc_heading">Repositories</h2>
+                <ul class="repo_card">
+                 
+                </ul>
+            </div>
+            
+
+            <!-- Follower's Image-->
+            <div class="five_followers">
+              
+              <h2 class="acc_heading">Followers</h2>
+              
+              <ul class="follower_container"></ul>
+
+              
+            </div>
+
+          </div>  
+        </div>
+
+      </section>
+
+    </main>
   </body>
 </html>
